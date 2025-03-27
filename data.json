@@ -1,0 +1,9 @@
+{
+    "products":[
+        {"id":1,"name":"PS2","price":1500},
+        {"id":2,"name":"Apple Watch","price":200},
+        {"id":3,"name":"Dell Laptop","price":300},
+        {"id":4,"name":"Air Cooler","price":450},
+        {"id":5,"name":"Desktop","price":800}
+    ]
+}
