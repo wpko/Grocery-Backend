@@ -12,7 +12,7 @@ app.add_middleware(
     allow_headers = ["*"],
 )
 
-with open("backend/data.json","r") as f:
+with open("data.json","r") as f:
     store_data = json.load(f)
     
 cart = []
