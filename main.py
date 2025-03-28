@@ -17,7 +17,7 @@ with open("data.json","r") as f:
     
 cart = []
 
-@app.get("/Products")
+@app.get("/products")
 def get_products():
     return store_data["products"]
 
