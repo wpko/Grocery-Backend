@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-import pydantic
+from pydantic import BaseModel
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
 import json
