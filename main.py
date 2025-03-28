@@ -17,16 +17,19 @@ with open("data.json","r") as f:
     
 cart = []
 
+class CartItem(BaseModel):
+    product_id: int
+    quantity: int
+
 @app.get("/products")
 def get_products():
     return store_data["products"]
 
-@app.post("/add-to-cart/{product_id}")
-def add_to_cart(product_id: int):
-    product = next((p for p in store_data["products"] if p["id"] == product_id), None)
-    if not product:
-        raise HTTPException(status_code=404, detail="Product not found")
-    cart.append(product)
+@app.post("/cart/add")
+def add_to_cart(item: CartItem):
+    product = next((p for p in products if p["id"] == item.product_id), None)
+    if product:
+        cart.append({"name":product["name"],"quantity":item.quantity,"price":product["price"]})
     return {"message":f"{product['name']} added to cart"}
 
 @app.get("/cart")
